@@ -1,0 +1,399 @@
+{
+    "swagger": "2.0",
+    "basePath": "/",
+    "paths": {
+        "/avgUserRating": {
+            "get": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "generate a bar chart to show average rating.",
+                "operationId": "get_avg_user_rating",
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/avgUserRatingFreeGames": {
+            "get": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Show the average user rating in free games.",
+                "operationId": "get_avg_user_rating_v_sfree",
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/avgUserRatingPaidGames": {
+            "get": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Show the average user rating in paid games.",
+                "operationId": "get_avg_user_rating_v_spaid",
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/category": {
+            "get": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Generates a graph to show different category.",
+                "operationId": "get_get_category",
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/countGeners": {
+            "get": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Generates a graph to show game counts in differnet geners.",
+                "operationId": "get_get_images",
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/dateVsAppSize": {
+            "get": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Show the trend of date and size.",
+                "operationId": "get_get_count",
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/getTopFive": {
+            "get": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Search the top five games according to rating.",
+                "operationId": "get_get_top_ten",
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/login": {
+            "post": {
+                "responses": {
+                    "403": {
+                        "description": "Invalid username or password"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "operationId": "post_login",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/login_details"
+                        }
+                    }
+                ],
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/login/changePassword/{user_id}": {
+            "parameters": [
+                {
+                    "name": "user_id",
+                    "in": "path",
+                    "required": true,
+                    "type": "string"
+                }
+            ],
+            "put": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "operationId": "put_change_password",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/pass_details"
+                        }
+                    }
+                ],
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/potentialCustomer": {
+            "get": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Show the games with the most potential customers",
+                "operationId": "get_game_vs_language",
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/predict": {
+            "post": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "predict the rating of a game based on price, age, size and genres.",
+                "operationId": "post_predict",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/predict_details"
+                        }
+                    }
+                ],
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/searchAttribute": {
+            "post": {
+                "responses": {
+                    "403": {
+                        "description": "Error"
+                    },
+                    "200": {
+                        "description": "Success"
+                    }
+                },
+                "description": "Show the top ten games in selected attributes.",
+                "operationId": "post_avg_user_rating_v_spaid",
+                "parameters": [
+                    {
+                        "name": "payload",
+                        "required": true,
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/search_details"
+                        }
+                    }
+                ],
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        },
+        "/token": {
+            "get": {
+                "responses": {
+                    "200": {
+                        "description": "Successful"
+                    }
+                },
+                "description": "Generates a authentication token",
+                "operationId": "get_token",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "query",
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "query",
+                        "type": "string"
+                    }
+                ],
+                "tags": [
+                    "COMP9321 assignment 2"
+                ]
+            }
+        }
+    },
+    "info": {
+        "title": "RoundTable API",
+        "version": "1.0",
+        "description": "A simple API for COMP9321"
+    },
+    "produces": [
+        "application/json"
+    ],
+    "consumes": [
+        "application/json"
+    ],
+    "securityDefinitions": {
+        "API-KEY": {
+            "type": "apiKey",
+            "name": "AUTH-TOKEN",
+            "in": "header"
+        }
+    },
+    "security": [
+        {
+            "API-KEY": []
+        }
+    ],
+    "tags": [
+        {
+            "name": "COMP9321 assignment 2",
+            "description": "Default namespace"
+        }
+    ],
+    "definitions": {
+        "login_details": {
+            "required": [
+                "email",
+                "password"
+            ],
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "roundtable@unsw.edu.au"
+                },
+                "password": {
+                    "type": "string",
+                    "example": "123456"
+                }
+            },
+            "type": "object"
+        },
+        "pass_details": {
+            "required": [
+                "password"
+            ],
+            "properties": {
+                "password": {
+                    "type": "string",
+                    "example": "123456"
+                }
+            },
+            "type": "object"
+        },
+        "predict_details": {
+            "required": [
+                "ageRating",
+                "genres",
+                "price",
+                "size"
+            ],
+            "properties": {
+                "price": {
+                    "type": "string",
+                    "example": "1.99"
+                },
+                "ageRating": {
+                    "type": "string",
+                    "example": "Age_17+"
+                },
+                "size": {
+                    "type": "string",
+                    "example": "100000"
+                },
+                "genres": {
+                    "type": "string",
+                    "example": "Genre_RolePlaying"
+                }
+            },
+            "type": "object"
+        },
+        "search_details": {
+            "required": [
+                "ageRating",
+                "genres",
+                "price"
+            ],
+            "properties": {
+                "price": {
+                    "type": "string",
+                    "example": "0"
+                },
+                "ageRating": {
+                    "type": "string",
+                    "example": "Age_4+"
+                },
+                "genres": {
+                    "type": "string",
+                    "example": "Strategy"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "responses": {
+        "ParseError": {
+            "description": "When a mask can't be parsed"
+        },
+        "MaskError": {
+            "description": "When any error occurs on mask"
+        }
+    }
+}
